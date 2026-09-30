@@ -375,6 +375,15 @@ section {
 .card p { color: var(--bone-dim); margin: 0 0 0.9rem; }
 .card-link { color: var(--ochre-bright); font-style: italic; }
 .feature { max-width: 720px; margin: 1.6rem auto; }
+.book-list {
+  display: inline-block;
+  text-align: left;
+  margin: 0.5rem auto 0;
+  padding-left: 1.5rem;
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+.book-list li::marker { color: var(--ochre-bright); }
 .coming-soon {
   text-align: center;
   font-size: clamp(2rem, 7vw, 4rem);
@@ -384,7 +393,7 @@ section {
   color: var(--ochre-bright);
   margin: 2.5rem 0;
 }
-.feature .piece img { border-radius: var(--radius); }
+.feature .piece img { width: 100%; height: auto; display: block; border-radius: var(--radius); }
 
 /* ---------- music pages ---------- */
 .artist-hero { max-width: 520px; margin: 0 auto 1.6rem; }
