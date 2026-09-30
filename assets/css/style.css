@@ -431,3 +431,8 @@ figure, figcaption { text-align: center; }
   text-align: center;
   max-width: 640px;
 }
+
+/* ---------- battle promo ---------- */
+.battle-promo { max-width: 720px; margin: 2.5rem auto 0; text-align: center; }
+.battle-promo img { max-width: min(100%, 520px); border-radius: var(--radius); border: 1px solid var(--line); }
+.battle-promo .prose { margin-top: 1.2rem; }
