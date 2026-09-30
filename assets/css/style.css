@@ -344,3 +344,32 @@ section {
   .lb-prev { left: 1.2rem; }
   .lb-next { right: 1.2rem; }
 }
+
+/* ---------- cards / features ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+  margin: 1.8rem auto 0.5rem;
+  max-width: 1000px;
+}
+.card {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.4rem;
+  background: var(--black-soft);
+  text-decoration: none;
+  color: var(--bone);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.card:hover, .card:focus-visible {
+  border-color: var(--ochre-bright);
+  transform: translateY(-2px);
+  color: var(--bone);
+}
+.card h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+.card p { color: var(--bone-dim); margin: 0 0 0.9rem; }
+.card-link { color: var(--ochre-bright); font-style: italic; }
+.feature { max-width: 720px; margin: 1.6rem auto; }
+.feature .piece img { border-radius: var(--radius); }
