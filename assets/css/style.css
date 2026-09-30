@@ -126,15 +126,14 @@ a:hover, a:focus-visible { color: var(--bone); }
   background: radial-gradient(ellipse at 50% 120%, #1c130c 0%, var(--black) 60%);
 }
 
-.koru-bg {
+.hero-bg {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(560px, 120vw);
+  width: min(780px, 135vw);
   height: auto;
   transform: translate(-50%, -52%);
-  color: var(--ochre);
-  opacity: 0.14;
+  opacity: 0.16;
   pointer-events: none;
 }
 
