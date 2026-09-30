@@ -375,6 +375,15 @@ section {
 .card p { color: var(--bone-dim); margin: 0 0 0.9rem; }
 .card-link { color: var(--ochre-bright); font-style: italic; }
 .feature { max-width: 720px; margin: 1.6rem auto; }
+.coming-soon {
+  text-align: center;
+  font-size: clamp(2rem, 7vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ochre-bright);
+  margin: 2.5rem 0;
+}
 .feature .piece img { border-radius: var(--radius); }
 
 /* ---------- music pages ---------- */
