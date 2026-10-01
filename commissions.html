@@ -144,12 +144,10 @@
             var svc = btn.getAttribute("data-service");
             var ta = form ? form.querySelector('textarea[name="Commission details"]') : null;
             if (ta) {
-              var lines = ta.value.split("
-");
+              var lines = ta.value.split("\n");
               if (lines[0].indexOf("Service:") === 0) lines[0] = "Service: " + svc;
               else lines.unshift("Service: " + svc, "");
-              ta.value = lines.join("
-");
+              ta.value = lines.join("\n");
             }
             if (form) form.scrollIntoView({ behavior: "smooth", block: "start" });
             if (ta) ta.focus({ preventScroll: true });
