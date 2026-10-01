@@ -458,3 +458,33 @@ figure, figcaption { text-align: center; }
   border: 1px solid var(--ochre-bright); border-radius: var(--radius);
   background: var(--black-soft); text-align: center;
 }
+
+/* ---------- services menu ---------- */
+.services-hint { text-align: center; color: var(--bone-dim); font-style: italic; margin: 1rem 0 0.5rem; }
+.services { list-style: none; padding: 0; margin: 1rem auto 0; max-width: 640px; display: grid; gap: 1.25rem; }
+.service-title {
+  background: none; border: none; padding: 0; font: inherit; font-size: 1.2rem;
+  font-weight: bold; text-decoration: underline; text-underline-offset: 3px;
+  color: var(--ochre-bright); cursor: pointer;
+}
+.service-title:hover, .service-title:focus-visible { color: var(--bone); }
+.service-desc { margin: 0.3rem 0 0; font-style: italic; color: var(--bone-dim); }
+/* ---------- invoice ---------- */
+.invoice {
+  max-width: 640px; margin: 2rem auto 0; padding: 1.5rem;
+  border: 1px solid var(--ochre-bright); border-radius: var(--radius);
+  background: var(--black-soft); text-align: left;
+}
+.invoice h3 { text-align: center; margin-top: 0; }
+.inv-meta { text-align: center; color: var(--bone-dim); }
+.inv-rows { display: grid; gap: 0.6rem; margin: 1rem 0; }
+.inv-row { display: grid; grid-template-columns: 150px 1fr; gap: 0.8rem; }
+.inv-row dt { font-weight: bold; color: var(--ochre-bright); }
+.inv-row dd { margin: 0; white-space: pre-wrap; }
+.inv-terms { font-size: 0.9rem; color: var(--bone-dim); font-style: italic; }
+.inv-print {
+  display: block; margin: 1rem auto 0; padding: 0.7rem 2rem; font: inherit; font-weight: bold;
+  color: #0b0a08; background: var(--ochre-bright); border: none;
+  border-radius: var(--radius); cursor: pointer;
+}
+.inv-print:hover { background: var(--ochre); color: var(--bone); }
