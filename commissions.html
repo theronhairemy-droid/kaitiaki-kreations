@@ -67,11 +67,35 @@
       </div>
       <h3>Start a commission</h3>
       <div class="prose">
-        <p>Commissions start with a conversation. Send me a DM on Instagram and tell me what you&rsquo;re dreaming of.</p>
+        <p>Commissions start with a conversation. Send me a DM on Instagram and tell me what you&rsquo;re dreaming of &mdash; or fill out the form below and it&rsquo;ll land straight in my inbox.</p>
         <ul class="links">
           <li><a href="https://www.instagram.com/hairemyverse/" rel="noopener">Instagram &mdash; @hairemyverse</a></li>
         </ul>
       </div>
+      <h3>Request a commission</h3>
+      <p class="form-thanks" id="form-thanks" hidden><strong>Request received.</strong> I&rsquo;ll read through it and get back to you to talk it through.</p>
+      <form class="request-form" action="https://formsubmit.co/kaitiaki.hamon.kreations@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New commission request — Kaitiaki Kreations">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://theronhairemy-droid.github.io/kaitiaki-kreations/commissions.html?sent=1">
+        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off">
+        <label>Name <input type="text" name="Name" required autocomplete="name"></label>
+        <label>Email <input type="email" name="Email" required autocomplete="email"></label>
+        <label>Phone number <input type="tel" name="Phone" autocomplete="tel"></label>
+        <label>City <input type="text" name="City" autocomplete="address-level2"></label>
+        <label>Describe the commission <textarea name="Commission details" rows="5" required></textarea></label>
+        <label>Budget <input type="text" name="Budget" placeholder="$"></label>
+        <button type="submit">Submit</button>
+      </form>
+      <script>
+      (function () {
+        if (new URLSearchParams(window.location.search).get("sent") === "1") {
+          var t = document.getElementById("form-thanks");
+          if (t) { t.hidden = false; t.scrollIntoView({ block: "center" }); }
+        }
+      })();
+      </script>
     </section>
   </main>
 
