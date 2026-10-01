@@ -436,3 +436,25 @@ figure, figcaption { text-align: center; }
 .battle-promo { max-width: 720px; margin: 2.5rem auto 0; text-align: center; }
 .battle-promo img { max-width: min(100%, 520px); border-radius: var(--radius); border: 1px solid var(--line); }
 .battle-promo .prose { margin-top: 1.2rem; }
+
+/* ---------- commission request form ---------- */
+.request-form { display: grid; gap: 1rem; max-width: 560px; margin: 1.5rem auto 0; text-align: left; }
+.request-form label { display: grid; gap: 0.35rem; font-weight: bold; color: var(--bone); }
+.request-form input, .request-form textarea {
+  width: 100%; padding: 0.7rem 0.9rem; font: inherit; color: var(--bone);
+  background: var(--black-soft); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.request-form input:focus, .request-form textarea:focus { outline: none; border-color: var(--ochre-bright); }
+.request-form textarea { resize: vertical; }
+.request-form button {
+  justify-self: center; padding: 0.8rem 3rem; font: inherit; font-weight: bold;
+  color: #0b0a08; background: var(--ochre-bright); border: none;
+  border-radius: var(--radius); cursor: pointer;
+}
+.request-form button:hover { background: var(--ochre); color: var(--bone); }
+.request-form .honey { display: none; }
+.form-thanks {
+  max-width: 560px; margin: 1.5rem auto 0; padding: 1rem 1.2rem;
+  border: 1px solid var(--ochre-bright); border-radius: var(--radius);
+  background: var(--black-soft); text-align: center;
+}
