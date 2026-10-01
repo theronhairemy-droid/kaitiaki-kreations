@@ -41,19 +41,50 @@
         <p>Every piece on this site started as a blank page and a feeling. If you want something made just for you &mdash; art, branding, or a whole online presence &mdash; this is where it starts.</p>
       </div>
       <h3>What I can make for you</h3>
+      <p class="services-hint">Tap a service to plug it into the request form below.</p>
+      <ul class="services">
+        <li>
+          <button type="button" class="service-title" data-service="Pointillism artwork">Pointillism artwork</button>
+          <p class="service-desc">Portraits and pieces built dot by deliberate dot, the patient way. No realism yet &mdash; stylized all the way.</p>
+        </li>
+        <li>
+          <button type="button" class="service-title" data-service="Abstract &amp; standard artwork">Abstract &amp; standard artwork</button>
+          <p class="service-desc">Marker, ink, pastel, or acrylic, straight out of the sketchbook.</p>
+        </li>
+        <li>
+          <button type="button" class="service-title" data-service="Album art">Album art</button>
+          <p class="service-desc">Digital or hand-drawn, made to match your sound.</p>
+        </li>
+        <li>
+          <button type="button" class="service-title" data-service="Logos">Logos</button>
+          <p class="service-desc">For bands, artists, and businesses.</p>
+        </li>
+        <li>
+          <button type="button" class="service-title" data-service="T-shirt graphics">T-shirt graphics</button>
+          <p class="service-desc">Designs ready for print.</p>
+        </li>
+        <li>
+          <button type="button" class="service-title" data-service="Business cards &amp; print">Business cards &amp; print</button>
+          <p class="service-desc">Cards, flyers, and promo pieces.</p>
+        </li>
+        <li>
+          <button type="button" class="service-title" data-service="Gig posters &amp; event flyers">Gig posters &amp; event flyers</button>
+          <p class="service-desc">Loud, eye-catching promo for your next show or event.</p>
+        </li>
+        <li>
+          <button type="button" class="service-title" data-service="Social media branding">Social media branding</button>
+          <p class="service-desc">Banners, profile art, and post templates with one consistent look.</p>
+        </li>
+        <li>
+          <button type="button" class="service-title" data-service="EPKs">EPKs</button>
+          <p class="service-desc">Electronic press kits that make you look like the headliner you are.</p>
+        </li>
+        <li>
+          <button type="button" class="service-title" data-service="Custom websites">Custom websites</button>
+          <p class="service-desc">Your own corner of the internet, designed around your brand from the ground up.</p>
+        </li>
+      </ul>
       <div class="prose">
-        <ul>
-          <li><strong>Pointillism artwork</strong> &mdash; portraits and pieces built dot by deliberate dot, the patient way. <em>No realism yet &mdash; stylized all the way.</em></li>
-          <li><strong>Abstract &amp; standard artwork</strong> &mdash; marker, ink, pastel, or acrylic, straight out of the sketchbook.</li>
-          <li><strong>Album art</strong> &mdash; digital or hand-drawn, made to match your sound.</li>
-          <li><strong>Logos</strong> &mdash; for bands, artists, and businesses.</li>
-          <li><strong>T-shirt graphics</strong> &mdash; designs ready for print.</li>
-          <li><strong>Business cards &amp; print</strong> &mdash; cards, flyers, and promo pieces.</li>
-          <li><strong>Gig posters &amp; event flyers</strong> &mdash; loud, eye-catching promo for your next show or event.</li>
-          <li><strong>Social media branding</strong> &mdash; banners, profile art, and post templates with one consistent look.</li>
-          <li><strong>EPKs</strong> &mdash; electronic press kits that make you look like the headliner you are.</li>
-          <li><strong>Custom websites</strong> &mdash; your own corner of the internet, designed around your brand from the ground up.</li>
-        </ul>
         <p>Something else in mind? If you can describe it, ask &mdash; if I can&rsquo;t do it or learn to, I will find someone else who can.</p>
       </div>
       <h3>How it works</h3>
@@ -80,6 +111,7 @@
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://theronhairemy-droid.github.io/kaitiaki-kreations/commissions.html?sent=1">
         <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="Request number" id="req-no" value="">
         <label>Name <input type="text" name="Name" required autocomplete="name"></label>
         <label>Email <input type="email" name="Email" required autocomplete="email"></label>
         <label>Phone number <input type="tel" name="Phone" autocomplete="tel"></label>
@@ -88,11 +120,82 @@
         <label>Budget <input type="text" name="Budget" placeholder="$"></label>
         <button type="submit">Submit</button>
       </form>
+      <div id="invoice" class="invoice" hidden></div>
       <script>
       (function () {
+        var form = document.querySelector(".request-form");
+        function fields() {
+          var data = {};
+          if (!form) return data;
+          form.querySelectorAll("input[name], textarea[name]").forEach(function (el) {
+            if (el.type === "hidden" && el.name.charAt(0) === "_") return;
+            data[el.name] = el.value;
+          });
+          return data;
+        }
+        function reqNo() {
+          var d = new Date();
+          function p(n) { return String(n).padStart(2, "0"); }
+          return "KK-" + d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + "-" + Math.floor(1000 + Math.random() * 9000);
+        }
+        // tap a service title to plug it into the form
+        document.querySelectorAll(".service-title").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var svc = btn.getAttribute("data-service");
+            var ta = form ? form.querySelector('textarea[name="Commission details"]') : null;
+            if (ta) {
+              var lines = ta.value.split("
+");
+              if (lines[0].indexOf("Service:") === 0) lines[0] = "Service: " + svc;
+              else lines.unshift("Service: " + svc, "");
+              ta.value = lines.join("
+");
+            }
+            if (form) form.scrollIntoView({ behavior: "smooth", block: "start" });
+            if (ta) ta.focus({ preventScroll: true });
+          });
+        });
+        // stamp a request number and stash the data before submit
+        if (form) form.addEventListener("submit", function () {
+          var no = reqNo();
+          var hidden = document.getElementById("req-no");
+          if (hidden) hidden.value = no;
+          try { sessionStorage.setItem("kk_last_request", JSON.stringify({ no: no, data: fields() })); } catch (e) {}
+        });
+        // thank-you + invoice after redirect
         if (new URLSearchParams(window.location.search).get("sent") === "1") {
           var t = document.getElementById("form-thanks");
-          if (t) { t.hidden = false; t.scrollIntoView({ block: "center" }); }
+          if (t) t.hidden = false;
+          var saved = null;
+          try { saved = JSON.parse(sessionStorage.getItem("kk_last_request")); } catch (e) {}
+          if (saved) {
+            renderInvoice(saved.no, saved.data);
+            var inv = document.getElementById("invoice");
+            if (inv) { inv.hidden = false; inv.scrollIntoView({ block: "center" }); }
+          }
+        }
+        function renderInvoice(no, d) {
+          var inv = document.getElementById("invoice");
+          if (!inv) return;
+          function esc(s) {
+            return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+              return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+            });
+          }
+          function row(k, v) {
+            return v ? '<div class="inv-row"><dt>' + k + '</dt><dd>' + esc(v) + '</dd></div>' : '';
+          }
+          var today = new Date().toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric" });
+          inv.innerHTML =
+            "<h3>Commission request invoice</h3>" +
+            '<p class="inv-meta"><strong>Request ' + esc(no) + "</strong> &mdash; " + esc(today) + "</p>" +
+            '<dl class="inv-rows">' +
+            row("Name", d["Name"]) + row("Email", d["Email"]) + row("Phone", d["Phone"]) +
+            row("City", d["City"]) + row("Commission details", d["Commission details"]) +
+            row("Budget", d["Budget"]) +
+            "</dl>" +
+            '<p class="inv-terms">This confirms your commission request. Final pricing is worked out together before any work begins &mdash; a 50% deposit starts the piece, with the balance due on delivery. A copy of this invoice is also on its way to your inbox.</p>' +
+            '<button type="button" class="inv-print" onclick="window.print()">Print / Save as PDF</button>';
         }
       })();
       </script>
