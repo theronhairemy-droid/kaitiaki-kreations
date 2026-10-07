@@ -293,6 +293,15 @@ section {
 .footer-nav a { color: var(--bone-dim); text-decoration: none; font-size: 0.95rem; }
 .footer-nav a:hover { color: var(--bone); text-decoration: underline; }
 
+/* ---------- pipe separators between header + footer nav links ---------- */
+.site-header ul li + li::before,
+.footer-nav li + li::before {
+  content: "|";
+  margin-right: 0.9rem;
+  color: var(--bone-dim);
+  opacity: 0.45;
+}
+
 /* ---------- lightbox ---------- */
 .lightbox {
   position: fixed;
