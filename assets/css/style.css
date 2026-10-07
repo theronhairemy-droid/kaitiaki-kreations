@@ -361,13 +361,16 @@ section {
 
 /* ---------- cards / features ---------- */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.25rem;
   margin: 1.8rem auto 0.5rem;
   max-width: 1000px;
 }
 .card {
+  flex: 1 1 240px;
+  max-width: 340px;
   display: block;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -506,3 +509,8 @@ figure, figcaption { text-align: center; }
 .drop-date { color: var(--bone-dim); font-style: italic; font-size: 0.9rem; margin-left: 0.5rem; }
 .drop { max-width: 780px; margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--line); }
 .drop h3 { margin-bottom: 0.2rem; }
+
+/* ---------- blog cards + breadcrumbs ---------- */
+.card-kicker { font-size: 0.85rem; color: var(--bone-dim); margin: 0 0 0.4rem; font-style: italic; }
+.crumbs { font-size: 0.9rem; color: var(--bone-dim); margin: 0 0 1.2rem; }
+.crumbs a { color: var(--ochre-bright); }
