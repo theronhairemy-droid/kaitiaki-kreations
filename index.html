@@ -15,23 +15,23 @@
   <a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header">
-    <nav aria-label="Main">
-      <a class="brand" href="index.html">
-        <svg class="koru-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-        <path d="M20 38C12.5 38 6.5 31.5 6.5 23.5 6.5 16 12 10.5 18.5 10.5c5.1 0 8.9 3.7 8.9 8.1 0 3.6-2.6 6.3-6 6.3-2.7 0-4.7-1.9-4.7-4.4" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
-        <path d="M35.0 6.3L37.9 12.7L42.3 11.6L42.0 16.9L47.2 18.2L43.7 22.5L45.6 26.3L41.7 27.8L40.6 30.9L36.4 30.5L36.4 39.5L33.6 39.5L33.6 30.5L29.4 30.9L28.3 27.8L24.4 26.3L26.3 22.5L22.8 18.2L28.0 16.9L27.7 11.6L32.1 12.7Z" fill="currentColor"/>
-      </svg>
-        <span>Kaitiaki&nbsp;Kreations</span>
-      </a>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="art/index.html">Kaitiaki Kreations</a></li>
-        <li><a href="hairemyverse.html">The Hairemyverse</a></li>
-        <li><a href="blog.html">Kaitiaki Hamon's Landscaping Blog</a></li>
-        <li><a href="commissions.html">Custom Commissions</a></li>
-        <li><a href="vornhaven.html">The World of Vornhaven</a></li>
-        <li><a href="about.html">Behind the Catharsis</a></li>
-      </ul>
+    <nav class="site-nav" aria-label="Main">
+      <a class="brand" href="index.html">Kaitiaki&nbsp;Kreations</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuPanel" aria-label="Open menu">
+        <img src="assets/img/logo-menu.jpg" alt="" aria-hidden="true">
+      </button>
+      <div class="menu-panel" id="menuPanel" hidden>
+        <ul class="menu-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="art/index.html">Kaitiaki Kreations</a></li>
+          <li><a href="hairemyverse.html">The Hairemyverse</a></li>
+          <li><a href="blog.html">Kaitiaki Hamon&rsquo;s Landscaping Blog</a></li>
+          <li><a href="commissions.html">Custom Commissions</a></li>
+          <li><a href="vornhaven.html">The World of Vornhaven</a></li>
+          <li><a href="about.html">Behind the Catharsis</a></li>
+          <li><a href="battle-bars.html">Battle Bars</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -40,10 +40,181 @@
       <img class="hero-bg" src="assets/img/beaver-kiwi-hero.png" alt="" aria-hidden="true">
       <p class="kicker">Kaitiaki Hamon<br>Ron Hairemy</p>
       <h1 id="hero-title">Kaitiaki Kreations</h1>
+      <p class="tagline">Pointillism, music, and worlds &mdash; built one dot, one bar, one page at a time.</p>
+      <a class="cta" href="#latest">See what&rsquo;s new &darr;</a>
+    </section>
+
+    <section class="hello" aria-labelledby="hello-title">
+      <h2 id="hello-title">Kia ora &mdash; hello, and welcome in</h2>
+      <div class="prose">
+        <p>I&rsquo;m <strong>Kaitiaki Awanui Hamon</strong> &mdash; I record as <strong>Ron Hairemy</strong>. I make pointillism the patient way, dot by deliberate dot, the way my great-granduncle Rei Hamon saw the bush: no shortcuts, just time turned into image. I make music the same way &mdash; hip hop, heart, and hard-won lessons, pressed into verses.</p>
+        <p>This is the home for all of it: the galleries, the songs, the world of Vornhaven, and the morning blog. Have a look around, stay for a track, and if something here moves you &mdash; you&rsquo;re in the right place.</p>
+        <p class="hello-sign">Kia ora, ya hoser! &mdash; pull up a chair.</p>
+      </div>
+    </section>
+
+    <section class="latest-blog" aria-labelledby="latest-blog-title">
+      <p class="featured-kicker">Latest from the blog &mdash; Kaitiaki Hamon&rsquo;s Look At Weather And The World</p>
+      <a class="latest-blog-card" href="blog/2026-10-09.html">
+        <p class="card-kicker">Blog #2 — The Band That Bet on Itself &mdash; Friday, October 9, 2026</p>
+        <h3 id="latest-blog-title">The Band That Bet on Itself</h3>
+        <p>Hey landscaping whānau, Kaitiaki Hamon here 🌳🚜 — today I bring you blog #2 of my blog's rebrand, and I'm getting this one to you ahead of the storm system circling the weekend 🗓️❄️. The MANAIA canvas is north of 35 hours now, outline, and all linework is el-complete-o, and today, I start bringing it to life with…</p>
+        <span class="card-link">Read the latest drop &rarr;</span>
+      </a>
+      <p class="section-note"><a href="blog.html">All drops &mdash; new every Monday, Wednesday, and Friday &rarr;</a></p>
+    </section>
+
+    <section id="latest" class="latest" aria-labelledby="latest-title">
+      <h2 id="latest-title">Fresh off the table</h2>
+      <p class="section-note">The newest finished work, front and centre.</p>
+
+      <div class="featured-grid">
+        <article class="featured featured-art">
+          <p class="featured-kicker">Latest finished pointillism</p>
+          <a class="featured-img" href="art/pointillism.html">
+            <img src="assets/img/parliament.jpg" alt="Parliament — pointillism, ink on paper, August 2026" loading="lazy">
+          </a>
+          <h3>Parliament</h3>
+          <p class="featured-meta">Pointillism, ink on paper &middot; August 2026</p>
+          <p>The Alberta Legislature Building, rendered dot by dot &mdash; architecture as patience practice. The most recent piece to come off the table finished, joining eleven pointillism works built through catharsis and recovery.</p>
+          <p class="featured-now">On the canvas now: the 18&times;24&Prime; <strong>MANAIA</strong> redo &mdash; 35+ hours in, linework done, colour next.</p>
+          <a class="card-link" href="art/pointillism.html">View the pointillism gallery &rarr;</a>
+        </article>
+
+        <article class="featured featured-music">
+          <p class="featured-kicker">Latest release &mdash; Ron Hairemy</p>
+          <div class="featured-video">
+            <iframe src="https://www.youtube.com/embed/DYa9CrQwwRo" title="Goats'N'Sheep — Ron Hairemy feat. KOHR36" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3>Goats&rsquo;N&rsquo;Sheep</h3>
+          <p class="featured-meta">Debut single as Ron Hairemy &middot; feat. KOHR36 &middot; from <em>The Death of Craigles</em></p>
+          <p>The first single under the name Ron Hairemy &mdash; growth, rebellion, and self-reclamation after Craigles O&rsquo;Grady stepped aside. Press play, then dig into the full Hairemyverse.</p>
+          <ul class="links featured-links">
+            <li><a href="https://www.youtube.com/@ronhairemy" rel="noopener">YouTube &mdash; @ronhairemy</a></li>
+            <li><a href="https://open.spotify.com/artist/2E9xs6NpAxJ0J7DGOxq7U3" rel="noopener">Spotify &mdash; Ron Hairemy</a></li>
+          </ul>
+          <a class="card-link" href="hairemyverse.html">Enter The Hairemyverse &rarr;</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="battle-home" aria-labelledby="battle-home-title">
+      <h2 id="battle-home-title">Upcoming battle</h2>
+      <p class="section-note">Ron Hairemy steps into the ring. Poster&rsquo;s up &mdash; come see it live.</p>
+      <div class="battle-home-grid">
+        <a class="battle-poster" href="hairemyverse.html">
+          <img src="assets/img/battle-flyer.jpg" alt="Insult 2 Injury: From the Gutter Vol. 1 — Sedusa Tha Truth vs Ron Hairemy, October 24, 2026" loading="lazy">
+        </a>
+        <div class="battle-details prose">
+          <p><strong>Insult 2 Injury: From the Gutter Vol. 1</strong></p>
+          <p><strong>Sedusa Tha Truth vs Ron Hairemy</strong> &mdash; three rounds, 69&ndash;90 seconds each. No judges&rsquo; scorecards here, just bars and presence.</p>
+          <p>Saturday, October 24, 2026<br>Doors 3pm &middot; First battle 4pm<br>Private venue &mdash; DM for details &middot; $15 at the door</p>
+          <ul class="links">
+            <li><a href="hairemyverse.html">More in The Hairemyverse &rarr;</a></li>
+            <li><a href="https://www.instagram.com/hairemyverse/" rel="noopener">DM for venue details</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mind" aria-labelledby="mind-title">
+      <h2 id="mind-title">What&rsquo;s sitting heavy today?</h2>
+      <p class="section-note">The Hairemyverse is built in zones. Pick the one you&rsquo;re in &mdash; I&rsquo;ll meet you there with a piece, a sound, and a question to sit with.</p>
+      <div class="zone-picker" role="group" aria-label="Choose your zone">
+        <button type="button" class="zone-btn" data-zone="rage">Rage</button>
+        <button type="button" class="zone-btn" data-zone="love">Love</button>
+        <button type="button" class="zone-btn" data-zone="betrayal">Betrayal</button>
+        <button type="button" class="zone-btn" data-zone="madness">Madness</button>
+        <button type="button" class="zone-btn" data-zone="rebirth">Rebirth</button>
+      </div>
+      <div id="zone-result" class="zone-result" aria-live="polite">
+        <p class="zone-hint">Tap a zone above. No wrong answer &mdash; just where you&rsquo;re at today.</p>
+      </div>
+      <p class="zone-dotnote">While you&rsquo;re thinking: every pointillism piece here is thousands of single dots. Nothing big happens all at once. It happens one honest dot at a time.</p>
+      <script>
+      (function () {
+        var zones = {
+          rage: {
+            title: "Rage",
+            img: "assets/img/please-save-me-now.jpg",
+            alt: "PLEASE... SAVE ME NOW! — winged burning heart, pointillism",
+            piece: "PLEASE&hellip; SAVE ME NOW!",
+            pieceNote: "The winged burning heart. &ldquo;All this TRAUMA inside, and it lives in my head.&rdquo;",
+            sound: "Start with Goats&rsquo;N&rsquo;Sheep &mdash; defiance turned into a debut.",
+            world: "In Vornhaven, the Pyrosire took the throne by flame and decreed every banner carry the V.",
+            question: "What would you burn down if you weren&rsquo;t afraid of the ashes?"
+          },
+          love: {
+            title: "Love",
+            img: "assets/img/manaia.jpg",
+            alt: "MANAIA — pointillism, dedicated to Sammy Bright",
+            piece: "MANAIA",
+            pieceNote: "Dedicated to Sammy Bright &mdash; the Anchor. Protection, drawn dot by dot.",
+            sound: "Sit with the idea of &ldquo;Momentarily&rdquo;: loving yourself so abundantly it pours into empty cups, instead of setting yourself on fire to keep someone else warm.",
+            world: "The Vitaweavers hide their shard in hymns &mdash; you don&rsquo;t force it, you resonate it out.",
+            question: "Who pours back into your cup without emptying theirs to do it?"
+          },
+          betrayal: {
+            title: "Betrayal",
+            img: "assets/img/anxietree-v2.jpg",
+            alt: "anxieTREE v2 — pointillism made during relapses, guilt, and shame",
+            piece: "anxieTREE v2",
+            pieceNote: "Made during relapses, guilt, and shame. The tree doesn&rsquo;t hide the rough seasons.",
+            sound: "They Tried To Take My Legacy &mdash; a record of survival, for the ones who matter most.",
+            world: "The Serpimancer shard, Xes&rsquo;z&#643;orath, isn&rsquo;t taken. It&rsquo;s manipulated out &mdash; venom does its work quiet.",
+            question: "What did the betrayal teach you about who you let close to the blade?"
+          },
+          madness: {
+            title: "Madness",
+            img: "assets/img/im-so-sick.jpg",
+            alt: "I&rsquo;m So Sick — pointillism face",
+            piece: "I&rsquo;m So Sick",
+            pieceNote: "The face in the static. Some days the signal is just noise, and you draw it anyway.",
+            sound: "Press play on The Hairemyverse and let it be loud in the room with you.",
+            world: "The Paradox Isles: every power in Vornhaven converges and the sky tears open. Madness, but make it geography.",
+            question: "If your mind was a room, what would you finally throw out the window?"
+          },
+          rebirth: {
+            title: "Rebirth",
+            img: "assets/img/beaver-kiwi.jpg",
+            alt: "beaver kiwi — Māori-Canadian fusion creature, pointillism",
+            piece: "beaver kiwi",
+            pieceNote: "Kiwi bird, beaver tail. M&amacr;ori blood, Canadian ground &mdash; a creature that shouldn&rsquo;t exist, thriving anyway.",
+            sound: "Goats&rsquo;N&rsquo;Sheep again &mdash; because Craigles O&rsquo;Grady had to step aside so Ron Hairemy could become fully realized.",
+            world: "Vornhaven itself was born when two planets, Synxxor and Deviorre, collided. Nothing reborn comes from nothing breaking first.",
+            question: "What version of you had to die so this one could breathe?"
+          }
+        };
+        var result = document.getElementById("zone-result");
+        var buttons = document.querySelectorAll(".zone-btn");
+        function showZone(key) {
+          var z = zones[key];
+          if (!z || !result) return;
+          buttons.forEach(function (b) {
+            b.classList.toggle("is-active", b.getAttribute("data-zone") === key);
+            b.setAttribute("aria-pressed", b.getAttribute("data-zone") === key ? "true" : "false");
+          });
+          result.innerHTML =
+            '<div class="zone-card">' +
+            '<img src="' + z.img + '" alt="' + z.alt + '" loading="lazy">' +
+            '<div class="zone-card-text">' +
+            '<h3>' + z.title + '</h3>' +
+            '<p><strong>' + z.piece + '</strong> &mdash; ' + z.pieceNote + '</p>' +
+            '<p>' + z.sound + '</p>' +
+            '<p>' + z.world + '</p>' +
+            '<p class="zone-question">' + z.question + '</p>' +
+            '<p class="zone-actions"><a href="art/pointillism.html">See the piece in the gallery &rarr;</a> &middot; <a href="hairemyverse.html">Hear the music &rarr;</a> &middot; <a href="vornhaven.html">Enter Vornhaven &rarr;</a></p>' +
+            '</div></div>';
+        }
+        buttons.forEach(function (btn) {
+          btn.addEventListener("click", function () { showZone(btn.getAttribute("data-zone")); });
+        });
+      })();
+      </script>
     </section>
 
     <section aria-labelledby="enter-title">
-      <h2 id="enter-title">Kia ora, ya hoser!</h2>
+      <h2 id="enter-title">Explore</h2>
       <div class="cards">
         <a class="card" href="art/index.html">
           <h3>Kaitiaki Kreations</h3>
@@ -84,21 +255,34 @@
         <path d="M20 38C12.5 38 6.5 31.5 6.5 23.5 6.5 16 12 10.5 18.5 10.5c5.1 0 8.9 3.7 8.9 8.1 0 3.6-2.6 6.3-6 6.3-2.7 0-4.7-1.9-4.7-4.4" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
         <path d="M35.0 6.3L37.9 12.7L42.3 11.6L42.0 16.9L47.2 18.2L43.7 22.5L45.6 26.3L41.7 27.8L40.6 30.9L36.4 30.5L36.4 39.5L33.6 39.5L33.6 30.5L29.4 30.9L28.3 27.8L24.4 26.3L26.3 22.5L22.8 18.2L28.0 16.9L27.7 11.6L32.1 12.7Z" fill="currentColor"/>
       </svg>
-    <nav aria-label="Footer">
-      <ul class="footer-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="art/index.html">Kaitiaki Kreations</a></li>
-        <li><a href="hairemyverse.html">The Hairemyverse</a></li>
-        <li><a href="blog.html">Kaitiaki Hamon's Landscaping Blog</a></li>
-        <li><a href="commissions.html">Custom Commissions</a></li>
-        <li><a href="vornhaven.html">The World of Vornhaven</a></li>
-        <li><a href="about.html">Behind the Catharsis</a></li>
-      </ul>
-    </nav>
     <p>Kaitiaki Awanui Hamon &mdash; Catharsis Through Kreation.</p>
     <p class="small">All art, music, and prose is owned in full by Kaitiaki Hamon.</p>
     <p class="small">&copy; All Rights Reserved.</p>
   </footer>
 
+  <script>
+  (function () {
+    var btn = document.getElementById("menuBtn");
+    var panel = document.getElementById("menuPanel");
+    if (!btn || !panel) return;
+    function setOpen(open) {
+      panel.hidden = !open;
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    btn.addEventListener("click", function () {
+      setOpen(panel.hidden);
+    });
+    panel.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () { setOpen(false); });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !panel.hidden) { setOpen(false); btn.focus(); }
+    });
+    document.addEventListener("click", function (e) {
+      if (!panel.hidden && !panel.contains(e.target) && !btn.contains(e.target)) setOpen(false);
+    });
+  })();
+  </script>
 </body>
 </html>
