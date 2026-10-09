@@ -187,6 +187,16 @@ a:hover, a:focus-visible { color: var(--bone); }
   display: inline-block;
   border-radius: 8px;
 }
+.bmc-strip {
+  text-align: center;
+  margin: 1.1rem 0 0;
+}
+.bmc-strip img {
+  height: 46px;
+  width: auto;
+  display: inline-block;
+  border-radius: 8px;
+}
 
 /* ---------- sections ---------- */
 section {
