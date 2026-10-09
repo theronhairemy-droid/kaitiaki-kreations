@@ -15,30 +15,30 @@
   <a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header">
-    <nav aria-label="Main">
-      <a class="brand" href="index.html">
-        <svg class="koru-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-        <path d="M20 38C12.5 38 6.5 31.5 6.5 23.5 6.5 16 12 10.5 18.5 10.5c5.1 0 8.9 3.7 8.9 8.1 0 3.6-2.6 6.3-6 6.3-2.7 0-4.7-1.9-4.7-4.4" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
-        <path d="M35.0 6.3L37.9 12.7L42.3 11.6L42.0 16.9L47.2 18.2L43.7 22.5L45.6 26.3L41.7 27.8L40.6 30.9L36.4 30.5L36.4 39.5L33.6 39.5L33.6 30.5L29.4 30.9L28.3 27.8L24.4 26.3L26.3 22.5L22.8 18.2L28.0 16.9L27.7 11.6L32.1 12.7Z" fill="currentColor"/>
-      </svg>
-        <span>Kaitiaki&nbsp;Kreations</span>
-      </a>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="art/index.html">Kaitiaki Kreations</a></li>
-        <li><a href="hairemyverse.html">The Hairemyverse</a></li>
-        <li><a href="blog.html">Kaitiaki Hamon's Landscaping Blog</a></li>
-        <li><a href="commissions.html">Custom Commissions</a></li>
-        <li><a href="vornhaven.html">The World of Vornhaven</a></li>
-        <li><a href="about.html">Behind the Catharsis</a></li>
-      </ul>
+    <nav class="site-nav" aria-label="Main">
+      <a class="brand" href="index.html">Kaitiaki&nbsp;Kreations</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuPanel" aria-label="Open menu">
+        <img src="assets/img/logo-menu.jpg" alt="" aria-hidden="true">
+      </button>
+      <div class="menu-panel" id="menuPanel" hidden>
+        <ul class="menu-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="art/index.html">Kaitiaki Kreations</a></li>
+          <li><a href="hairemyverse.html">The Hairemyverse</a></li>
+          <li><a href="blog.html">Kaitiaki Hamon&rsquo;s Landscaping Blog</a></li>
+          <li><a href="commissions.html">Custom Commissions</a></li>
+          <li><a href="vornhaven.html">The World of Vornhaven</a></li>
+          <li><a href="about.html">Behind the Catharsis</a></li>
+          <li><a href="battle-bars.html">Battle Bars</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <main id="main">
     <section aria-labelledby="page-title">
       <h2 id="page-title">The Hairemyverse</h2>
-      <p class="section-note">Two distinct names, one evolving voice. Choose your era.</p>
+      <p class="section-note">Two distinct names, one evolving voice &mdash; plus the battle archive. Choose your era.</p>
       <div class="cards">
         <a class="card" href="ron-hairemy.html">
           <h3>Ron Hairemy</h3>
@@ -50,6 +50,11 @@
           <p>The foundational era, spanning 2017&ndash;2025. Dive into the archives of progressive &ldquo;sad boii rap&rdquo; that paved the turbulent road to the present.</p>
           <span class="card-link">Hear Craigles O&rsquo;Grady &rarr;</span>
         </a>
+        <a class="card" href="battle-bars.html">
+          <h3>Battle Bars</h3>
+          <p>The Smoked Out Battles archive &mdash; every time Craigles O&rsquo;Grady stepped in the ring, plus the next one up.</p>
+          <span class="card-link">Watch the battles &rarr;</span>
+        </a>
       </div>
     </section>
     <section aria-labelledby="battle-title" class="battle-promo">
@@ -58,6 +63,7 @@
       <div class="prose">
         <p><strong>Insult 2 Injury: From the Gutter Vol. 1</strong> &mdash; Ron Hairemy steps into the ring against <strong>Sedusa Tha Truth</strong>.</p>
         <p>Saturday, October 24, 2026 &middot; Doors 3pm &middot; First battle 4pm<br>Private venue &mdash; DM for details &middot; $15 admission at the door</p>
+        <p><a href="battle-bars.html">Watch the battle archive &rarr;</a></p>
       </div>
     </section>
   </main>
@@ -67,21 +73,34 @@
         <path d="M20 38C12.5 38 6.5 31.5 6.5 23.5 6.5 16 12 10.5 18.5 10.5c5.1 0 8.9 3.7 8.9 8.1 0 3.6-2.6 6.3-6 6.3-2.7 0-4.7-1.9-4.7-4.4" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
         <path d="M35.0 6.3L37.9 12.7L42.3 11.6L42.0 16.9L47.2 18.2L43.7 22.5L45.6 26.3L41.7 27.8L40.6 30.9L36.4 30.5L36.4 39.5L33.6 39.5L33.6 30.5L29.4 30.9L28.3 27.8L24.4 26.3L26.3 22.5L22.8 18.2L28.0 16.9L27.7 11.6L32.1 12.7Z" fill="currentColor"/>
       </svg>
-    <nav aria-label="Footer">
-      <ul class="footer-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="art/index.html">Kaitiaki Kreations</a></li>
-        <li><a href="hairemyverse.html">The Hairemyverse</a></li>
-        <li><a href="blog.html">Kaitiaki Hamon's Landscaping Blog</a></li>
-        <li><a href="commissions.html">Custom Commissions</a></li>
-        <li><a href="vornhaven.html">The World of Vornhaven</a></li>
-        <li><a href="about.html">Behind the Catharsis</a></li>
-      </ul>
-    </nav>
     <p>Kaitiaki Awanui Hamon &mdash; Catharsis Through Kreation.</p>
     <p class="small">All art, music, and prose is owned in full by Kaitiaki Hamon.</p>
     <p class="small">&copy; All Rights Reserved.</p>
   </footer>
 
+  <script>
+  (function () {
+    var btn = document.getElementById("menuBtn");
+    var panel = document.getElementById("menuPanel");
+    if (!btn || !panel) return;
+    function setOpen(open) {
+      panel.hidden = !open;
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    btn.addEventListener("click", function () {
+      setOpen(panel.hidden);
+    });
+    panel.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () { setOpen(false); });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !panel.hidden) { setOpen(false); btn.focus(); }
+    });
+    document.addEventListener("click", function (e) {
+      if (!panel.hidden && !panel.contains(e.target) && !btn.contains(e.target)) setOpen(false);
+    });
+  })();
+  </script>
 </body>
 </html>
