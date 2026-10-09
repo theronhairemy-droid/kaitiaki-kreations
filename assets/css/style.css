@@ -785,3 +785,29 @@ figure, figcaption { text-align: center; }
 }
 .latest-blog-card h3 { font-size: 1.6rem; margin-bottom: 0.5rem; }
 .latest-blog-card p { color: var(--bone-dim); }
+
+/* ---------- page title banners (colour anxieTREE) ---------- */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  isolation: isolate;
+}
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(5, 4, 3, 0.62), rgba(5, 4, 3, 0.82)),
+    url("../img/anxietree-colour.jpg") center 32% / cover no-repeat;
+}
+.page-hero .section-note { color: var(--bone); }
+.page-hero h1, .page-hero h2 { text-shadow: 0 2px 14px rgba(0,0,0,0.7); }
+
+.page-hero-vornhaven::before {
+  background:
+    linear-gradient(rgba(5, 4, 3, 0.55), rgba(5, 4, 3, 0.78)),
+    url("../img/vornhaven-castle.jpg") center 40% / cover no-repeat;
+}
