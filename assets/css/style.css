@@ -835,3 +835,6 @@ body.bg-vornhaven::before {
     url("../img/vornhaven-castle.jpg") center 40% / cover no-repeat;
 }
 .hero { background: radial-gradient(ellipse at 50% 120%, rgba(28, 19, 12, 0.45) 0%, rgba(11, 10, 8, 0.10) 60%); }
+
+/* Hamon Art card photos (added 2026-10-20) */
+.card .card-img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; border-radius: calc(var(--radius) - 4px); margin-bottom: 1rem; }
