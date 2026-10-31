@@ -312,14 +312,7 @@
 
 <style>
 .hfx-bg { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
-.hfx-eyepair { position: absolute; display: flex; gap: 13px; transform-origin: center; animation: hfxBlink 63s linear infinite; }
-.hfx-eyepair span { display: block; width: 11px; height: 15px; border-radius: 50%; background: #ffb347; box-shadow: 0 0 14px 5px rgba(255,110,10,.55); }
-.hfx-eyepair.e1 { top: 15%; left: 2.5%; animation-duration: 57s; }
-.hfx-eyepair.e2 { top: 36%; right: 2.5%; animation-duration: 71s; animation-delay: -23s; }
-.hfx-eyepair.e2 span { transform: rotate(9deg); }
-.hfx-eyepair.e3 { bottom: 22%; left: 3%; animation-duration: 83s; animation-delay: -51s; }
-.hfx-eyepair.e3 span { width: 9px; height: 12px; }
-@keyframes hfxBlink { 0%, 96.4%, 100% { transform: scaleY(1); } 97.6%, 98.6% { transform: scaleY(0.06); } }
+.hfx-eyesgif { position: absolute; pointer-events: none; mix-blend-mode: screen; opacity: 0; transition: opacity .35s ease; }
 .hfx-lurk { position: absolute; bottom: -34px; left: 3%; width: 180px; height: 260px; filter: blur(7px); opacity: .5; background: radial-gradient(ellipse 60% 45% at 50% 22%, rgba(5,5,8,.92), rgba(5,5,8,0) 70%), radial-gradient(ellipse 82% 60% at 50% 76%, rgba(5,5,8,.88), rgba(5,5,8,0) 72%); animation: hfxShift 24s ease-in-out infinite alternate; }
 @keyframes hfxShift { from { transform: translate(0, 12px) scale(1); } to { transform: translate(9vw, -14px) scale(1.06); } }
 .hfx-lurk-eyes { position: absolute; top: 15%; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; opacity: 0; animation: hfxPeek 41s linear infinite; }
@@ -330,12 +323,10 @@
 .hfx-ghost-in { display: block; animation-name: hfxSway; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-direction: alternate; filter: drop-shadow(0 0 6px rgba(255,255,255,.35)); }
 @keyframes hfxRise { 0% { transform: translateY(0); opacity: 0; } 8% { opacity: .95; } 85% { opacity: .9; } 100% { transform: translateY(-125vh); opacity: 0; } }
 @keyframes hfxSway { from { transform: translateX(-16px) rotate(-6deg); } to { transform: translateX(16px) rotate(6deg); } }
-@media (prefers-reduced-motion: reduce) { .hfx-eyepair, .hfx-lurk, .hfx-lurk-eyes, .hfx-ghost, .hfx-ghost-in { animation: none !important; } .hfx-lurk-eyes { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .hfx-lurk, .hfx-lurk-eyes, .hfx-ghost, .hfx-ghost-in { animation: none !important; } .hfx-lurk-eyes { opacity: 0; } .hfx-eyesgif { display: none; } }
 </style>
 <div class="hfx-bg" aria-hidden="true">
-  <div class="hfx-eyepair e1"><span></span><span></span></div>
-  <div class="hfx-eyepair e2"><span></span><span></span></div>
-  <div class="hfx-eyepair e3"><span></span><span></span></div>
+  <img class="hfx-eyesgif" src="https://media1.tenor.com/m/oDv24s0kwhUAAAAC/ghost-eye.gif" alt="" width="130" height="130">
   <div class="hfx-lurk"><div class="hfx-lurk-eyes"><span></span><span></span></div></div>
 </div>
 <div class="hfx-ghosts" aria-hidden="true"></div>
@@ -363,6 +354,31 @@
   }
   for (var i = 0; i < 12; i++) spawn(Math.random() * 3500);
   setInterval(function () { spawn(0); if (Math.random() < 0.5) spawn(1400); }, 50000);
+  var eyes = document.querySelector('.hfx-eyesgif');
+  if (eyes) {
+    function placeEyes() {
+      var side = Math.random();
+      var w = Math.round(90 + Math.random() * 60);
+      eyes.style.width = w + 'px';
+      eyes.style.height = w + 'px';
+      var x, y;
+      if (side < 0.4) { x = 1 + Math.random() * 7; y = 8 + Math.random() * 74; }
+      else if (side < 0.8) { x = 88 + Math.random() * 8; y = 8 + Math.random() * 74; }
+      else if (side < 0.9) { x = 8 + Math.random() * 76; y = 4 + Math.random() * 8; }
+      else { x = 8 + Math.random() * 76; y = 82 + Math.random() * 8; }
+      eyes.style.left = x + 'vw';
+      eyes.style.top = y + 'vh';
+    }
+    function eyeCycle() {
+      placeEyes();
+      eyes.style.opacity = '1';
+      setTimeout(function () {
+        eyes.style.opacity = '0';
+        setTimeout(eyeCycle, 450);
+      }, 6000);
+    }
+    eyeCycle();
+  }
 })();
 </script>
 
