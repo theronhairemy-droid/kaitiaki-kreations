@@ -844,5 +844,6 @@ body.bg-vornhaven::before {
 .lang-toggle.bottom { padding: 0.25rem 1rem 1.15rem; }
 .lang-btn { display: inline-block; background: #e8b34b; color: #171208; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.01em; padding: 0.7rem 1.4rem; border-radius: 999px; border: 2px solid #171208; text-decoration: none; box-shadow: 0 3px 12px rgba(0,0,0,0.4); }
 .lang-btn:hover, .lang-btn:focus-visible { background: #f4c96a; color: #171208; }
-.nav-poppy { margin-left: auto; display: inline-flex; align-items: center; padding-right: 0.4rem; }
-.nav-poppy svg { width: 34px; height: 34px; display: block; }
+main { position: relative; }
+.page-poppy { position: absolute; top: 0.7rem; right: 0.9rem; z-index: 6; pointer-events: none; }
+.page-poppy svg { width: 58px; height: 58px; display: block; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.45)); }
