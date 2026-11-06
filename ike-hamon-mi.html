@@ -84,7 +84,7 @@
     <p>Kaitiaki Awanui Hamon, Catharsis Through Kreation.</p>
     <p class="small">Kaitiaki Awanui Hamon, i whānau mai ko Craig Rodgers. Ko Ron Hairemy tana ingoa puoro.</p>
     <p class="small"><a href="https://kaitiakihamon-ai.grok.me" target="_blank" rel="noopener">Kōrero ki a Kaitiaki AI</a></p>
-    <p class="small"><a href="https://stayforawhile.kaitiakihamon.com/?view=login">Log in</a> &middot; <a href="https://stayforawhile.kaitiakihamon.com/?view=signup">Sign up</a> &mdash; Hairemyverse Community</p>
+    <p class="small"><span class="community-links"><a href="https://stayforawhile.kaitiakihamon.com/?view=login">Log in</a> &middot; <a href="https://stayforawhile.kaitiakihamon.com/?view=signup">Sign up</a></span> &mdash; Hairemyverse Community</p>
     <p class="small">Nā Kaitiaki Hamon katoa te mana o ngā toi, ngā puoro, me ngā tuhinga.</p>
     <p class="small">&copy; Pūmau katoa ngā mana.</p>
   </footer>
@@ -111,6 +111,42 @@
     document.addEventListener("click", function (e) {
       if (!panel.hidden && !panel.contains(e.target) && !btn.contains(e.target)) setOpen(false);
     });
+  })();
+  </script>
+  <script>
+  (function () {
+    try {
+      var raw = null, parts = document.cookie ? document.cookie.split(";") : [], i, p;
+      for (i = 0; i < parts.length; i++) {
+        p = parts[i].replace(/^\s+|\s+$/g, "");
+        if (p.indexOf("hairemyverse_member=") === 0) { raw = p.substring(20); break; }
+      }
+      if (!raw) return;
+      var data = JSON.parse(decodeURIComponent(raw));
+      var u = (data && typeof data.u === "string") ? data.u : "";
+      if (!u) return;
+      var els = document.querySelectorAll(".community-links"), j, el, old, style, cls, a1, a2;
+      for (j = 0; j < els.length; j++) {
+        el = els[j];
+        old = el.querySelector("a");
+        style = old ? old.getAttribute("style") : null;
+        cls = old ? old.getAttribute("class") : null;
+        while (el.firstChild) el.removeChild(el.firstChild);
+        a1 = document.createElement("a");
+        a1.href = "https://stayforawhile.kaitiakihamon.com/?view=blogs";
+        if (style) a1.setAttribute("style", style);
+        if (cls) a1.setAttribute("class", cls);
+        a1.textContent = "Kia ora, " + u;
+        el.appendChild(a1);
+        el.appendChild(document.createTextNode(" \u00b7 "));
+        a2 = document.createElement("a");
+        a2.href = "https://stayforawhile.kaitiakihamon.com/?view=logout";
+        if (style) a2.setAttribute("style", style);
+        if (cls) a2.setAttribute("class", cls);
+        a2.textContent = "Log out";
+        el.appendChild(a2);
+      }
+    } catch (e) { /* no-op: default Log in / Sign up links stay */ }
   })();
   </script>
 </body>
