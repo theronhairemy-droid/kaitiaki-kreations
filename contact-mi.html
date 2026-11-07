@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Whakapā Mai: Kaitiaki Kreations</title>
-  <meta name="description" content="Whakapā atu ki a Kaitiaki Awanui Hamon (Ron Hairemy) i Edmonton: īmēra ronhairemy@kaitiakihamon.com, Instagram, YouTube, me Spotify, ngā pātai ota, me Kaitiaki AI mō ngā mea katoa atu.">
+  <meta name="description" content="Whakapā atu ki a Kaitiaki Awanui Hamon (Ron Hairemy) i Edmonton: tukuna tētahi karere mā te puka whakapā, ā, ka tau tika ki tana pouaka īmēra whaimana ronhairemy@kaitiakihamon.com.">
   <meta property="og:title" content="Whakapā Mai: Kaitiaki Kreations">
-  <meta property="og:description" content="Whakapā atu ki a Kaitiaki Awanui Hamon (Ron Hairemy) i Edmonton: īmēra ronhairemy@kaitiakihamon.com, Instagram, YouTube, me Spotify, ngā pātai ota, me Kaitiaki AI mō ngā mea katoa atu.">
+  <meta property="og:description" content="Whakapā atu ki a Kaitiaki Awanui Hamon (Ron Hairemy) i Edmonton: tukuna tētahi karere mā te puka whakapā, ā, ka tau tika ki tana pouaka īmēra whaimana ronhairemy@kaitiakihamon.com.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://kaitiakihamon.com/assets/img/og-anxia-wide.jpg">
   <link rel="stylesheet" href="assets/css/style.css?v=20261101c">
@@ -49,29 +49,28 @@
 <section class="page-hero" aria-labelledby="page-title">
       <h2 id="page-title">Whakapā Mai</h2>
       <div class="prose">
-        <p>E hiahia ana ki te whakapā mai? Kōwhiria te kūaha e tika ana. He puka anō tō ngā ota, ā, mō ngā mea katoa atu he īmēra, ngā pae pāpori, me Kaitiaki AI.</p>
+        <p>Tukuna mai tō karere. Ka tau tika ki taku pouaka īmēra, ā, ka whakautu atu au.</p>
       </div>
-      <h3>Īmēra</h3>
-      <div class="prose">
-        <p>Te pouaka īmēra whaimana, tika mai ki ahau:</p>
-        <p><strong><a href="mailto:ronhairemy@kaitiakihamon.com">ronhairemy@kaitiakihamon.com</a></strong></p>
-      </div>
-      <h3>Ngā Pae Pāpori</h3>
-      <ul class="links">
-        <li><a href="https://www.instagram.com/hairemyverse/" rel="noopener">Instagram, @hairemyverse</a></li>
-        <li><a href="https://www.youtube.com/@ronhairemy" rel="noopener">YouTube, @ronhairemy</a></li>
-        <li><a href="https://www.youtube.com/@ogradypromotions" rel="noopener">YouTube, @ogradypromotions</a></li>
-        <li><a href="https://open.spotify.com/artist/2E9xs6NpAxJ0J7DGOxq7U3" rel="noopener">Spotify, Ron Hairemy</a></li>
-        <li><a href="https://buymeacoffee.com/kaitiakihamon" target="_blank" rel="noopener">Buy Me a Coffee, kaitiakihamon</a></li>
-      </ul>
-      <h3>Ngā Pātai Ota</h3>
-      <div class="prose">
-        <p>E pātai ana mō tētahi mahi toi, tētahi waitohu, tētahi paetukutuku, tētahi mea motuhake rānei? Haere ki te whārangi <a href="commissions-mi.html">Ngā Ota Motuhake</a>, whakakīia te puka tono i reira. Ka tau tika ki te pouaka īmēra whaimana i runga nei.</p>
-      </div>
-      <h3>Ngā Pātai Katoa Atu</h3>
-      <div class="prose">
-        <p>He pātai mō te puoro, te toi, te rangitaki, te ao o Vornhaven rānei? <a href="https://ai.kaitiakihamon.com" target="_blank" rel="noopener">Kōrero ki a Kaitiaki AI</a> i te tuatahi, e mōhio ana ia ki te rārangi mahi katoa. Ko ngā mea kāore e taea e ia te whakautu, tukuna ki te īmēra i runga nei.</p>
-      </div>
+      <p class="form-thanks" id="form-thanks" hidden><strong>Kua tukuna tō karere.</strong> Ngā mihi mō tō whakapā mai, ka whakautu atu au ā te wā e taea ai.</p>
+      <form class="request-form" action="https://formsubmit.co/ronhairemy@kaitiakihamon.com" method="POST">
+        <input type="hidden" name="_subject" value="New message via the kaitiakihamon.com contact page">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://kaitiakihamon.com/contact-mi.html?sent=1">
+        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off">
+        <label>Ingoa <input type="text" name="Name" required autocomplete="name"></label>
+        <label>Īmēra <input type="email" name="Email" required autocomplete="email"></label>
+        <label>Karere <textarea name="Message" rows="6" required></textarea></label>
+        <button type="submit">Tukuna</button>
+      </form>
+      <script>
+      (function () {
+        if (new URLSearchParams(window.location.search).get("sent") === "1") {
+          var t = document.getElementById("form-thanks");
+          if (t) { t.hidden = false; t.scrollIntoView({ block: "center" }); }
+        }
+      })();
+      </script>
     </section>
 <div class="lang-toggle bottom"><a class="lang-btn" href="contact.html">🌐 View page in English</a></div>
   </main>

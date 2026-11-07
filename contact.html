@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact: Kaitiaki Kreations</title>
-  <meta name="description" content="Contact Kaitiaki Awanui Hamon (Ron Hairemy) in Edmonton: email ronhairemy@kaitiakihamon.com, Instagram, YouTube, and Spotify, commission inquiries, and Kaitiaki AI for everything else.">
+  <meta name="description" content="Contact Kaitiaki Awanui Hamon (Ron Hairemy) in Edmonton: send a message through the contact form and it lands straight in his official inbox at ronhairemy@kaitiakihamon.com.">
   <meta property="og:title" content="Contact: Kaitiaki Kreations">
-  <meta property="og:description" content="Contact Kaitiaki Awanui Hamon (Ron Hairemy) in Edmonton: email ronhairemy@kaitiakihamon.com, Instagram, YouTube, and Spotify, commission inquiries, and Kaitiaki AI for everything else.">
+  <meta property="og:description" content="Contact Kaitiaki Awanui Hamon (Ron Hairemy) in Edmonton: send a message through the contact form and it lands straight in his official inbox at ronhairemy@kaitiakihamon.com.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://kaitiakihamon.com/assets/img/og-anxia-wide.jpg">
   <link rel="stylesheet" href="assets/css/style.css?v=20261101c">
@@ -49,29 +49,28 @@
     <section class="page-hero" aria-labelledby="page-title">
       <h2 id="page-title">Contact</h2>
       <div class="prose">
-        <p>Want to reach me? Pick the door that fits. Commissions have their own form, and everything else has email, the socials, and Kaitiaki AI.</p>
+        <p>Send me a message. It lands straight in my inbox and I will get back to you.</p>
       </div>
-      <h3>Email</h3>
-      <div class="prose">
-        <p>The official inbox, straight to me:</p>
-        <p><strong><a href="mailto:ronhairemy@kaitiakihamon.com">ronhairemy@kaitiakihamon.com</a></strong></p>
-      </div>
-      <h3>Socials</h3>
-      <ul class="links">
-        <li><a href="https://www.instagram.com/hairemyverse/" rel="noopener">Instagram, @hairemyverse</a></li>
-        <li><a href="https://www.youtube.com/@ronhairemy" rel="noopener">YouTube, @ronhairemy</a></li>
-        <li><a href="https://www.youtube.com/@ogradypromotions" rel="noopener">YouTube, @ogradypromotions</a></li>
-        <li><a href="https://open.spotify.com/artist/2E9xs6NpAxJ0J7DGOxq7U3" rel="noopener">Spotify, Ron Hairemy</a></li>
-        <li><a href="https://buymeacoffee.com/kaitiakihamon" target="_blank" rel="noopener">Buy Me a Coffee, kaitiakihamon</a></li>
-      </ul>
-      <h3>Commission inquiries</h3>
-      <div class="prose">
-        <p>Asking about a piece, a logo, a website, or anything custom? Head to the <a href="commissions.html">Custom Commissions</a> page and fill out the request form there. It lands in the official inbox above.</p>
-      </div>
-      <h3>All other inquiries</h3>
-      <div class="prose">
-        <p>Questions about the music, the art, the blog, or the world of Vornhaven? <a href="https://ai.kaitiakihamon.com" target="_blank" rel="noopener">Chat with Kaitiaki AI</a> first, it knows the catalogue. Anything it cannot answer, send to the email above.</p>
-      </div>
+      <p class="form-thanks" id="form-thanks" hidden><strong>Message sent.</strong> Thanks for reaching out, I will reply as soon as I can.</p>
+      <form class="request-form" action="https://formsubmit.co/ronhairemy@kaitiakihamon.com" method="POST">
+        <input type="hidden" name="_subject" value="New message via the kaitiakihamon.com contact page">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://kaitiakihamon.com/contact.html?sent=1">
+        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off">
+        <label>Name <input type="text" name="Name" required autocomplete="name"></label>
+        <label>Email <input type="email" name="Email" required autocomplete="email"></label>
+        <label>Message <textarea name="Message" rows="6" required></textarea></label>
+        <button type="submit">Send</button>
+      </form>
+      <script>
+      (function () {
+        if (new URLSearchParams(window.location.search).get("sent") === "1") {
+          var t = document.getElementById("form-thanks");
+          if (t) { t.hidden = false; t.scrollIntoView({ block: "center" }); }
+        }
+      })();
+      </script>
     </section>
   <div class="lang-toggle bottom"><a class="lang-btn" href="contact-mi.html">🌐 View page in Te Reo Māori</a></div>
   </main>
