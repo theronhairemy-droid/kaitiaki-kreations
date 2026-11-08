@@ -93,6 +93,101 @@
         </a>
       </div>
     </section>
+    <section class="mind" aria-labelledby="mind-title">
+      <h2 id="mind-title">What&rsquo;s sitting heavy today?</h2>
+      <p class="section-note">The Hairemyverse is built in zones. Pick the one you&rsquo;re in, I&rsquo;ll meet you there with a piece, a sound, and a question to sit with.</p>
+      <div class="zone-picker" role="group" aria-label="Choose your zone">
+        <button type="button" class="zone-btn" data-zone="rage">Rage</button>
+        <button type="button" class="zone-btn" data-zone="love">Love</button>
+        <button type="button" class="zone-btn" data-zone="betrayal">Betrayal</button>
+        <button type="button" class="zone-btn" data-zone="madness">Madness</button>
+        <button type="button" class="zone-btn" data-zone="rebirth">Rebirth</button>
+      </div>
+      <div id="zone-result" class="zone-result" aria-live="polite">
+        <p class="zone-hint">Tap a zone above. No wrong answer, just where you&rsquo;re at today.</p>
+      </div>
+      <p class="zone-dotnote">While you&rsquo;re thinking: every pointillism piece here is thousands of single dots. Nothing big happens all at once. It happens one honest dot at a time.</p>
+      <script>
+      (function () {
+        var zones = {
+          rage: {
+            title: "Rage",
+            img: "assets/img/please-save-me-now.jpg",
+            alt: "PLEASE... SAVE ME NOW!, winged burning heart, pointillism",
+            piece: "PLEASE&hellip; SAVE ME NOW!",
+            pieceNote: "The winged burning heart. &ldquo;All this TRAUMA inside, and it lives in my head.&rdquo;",
+            sound: "Start with Goats&rsquo;N&rsquo;Sheep, defiance turned into a debut.",
+            world: "In Vornhaven, the Pyrosire took the throne by flame and decreed every banner carry the V.",
+            question: "What would you burn down if you weren&rsquo;t afraid of the ashes?"
+          },
+          love: {
+            title: "Love",
+            img: "assets/img/manaia.jpg",
+            alt: "MANAIA, pointillism, dedicated to Sammy Bright",
+            piece: "MANAIA",
+            pieceNote: "Dedicated to Sammy Bright, the Anchor. Protection, drawn dot by dot.",
+            sound: "Sit with the idea of &ldquo;Momentarily&rdquo;: loving yourself so abundantly it pours into empty cups, instead of setting yourself on fire to keep someone else warm.",
+            world: "The Vitaweavers hide their shard in hymns, you don&rsquo;t force it, you resonate it out.",
+            question: "Who pours back into your cup without emptying theirs to do it?"
+          },
+          betrayal: {
+            title: "Betrayal",
+            img: "assets/img/anxietree-v2.jpg",
+            alt: "anxieTREE v2, pointillism made during relapses, guilt, and shame",
+            piece: "anxieTREE v2",
+            pieceNote: "Made during relapses, guilt, and shame. The tree doesn&rsquo;t hide the rough seasons.",
+            sound: "They Tried To Take My Legacy, a record of survival, for the ones who matter most.",
+            world: "The Serpimancer shard, Xes&rsquo;z&#643;orath, isn&rsquo;t taken. It&rsquo;s manipulated out, venom does its work quiet.",
+            question: "What did the betrayal teach you about who you let close to the blade?"
+          },
+          madness: {
+            title: "Madness",
+            img: "assets/img/im-so-sick.jpg",
+            alt: "I&rsquo;m So Sick, pointillism face",
+            piece: "I&rsquo;m So Sick",
+            pieceNote: "The face in the static. Some days the signal is just noise, and you draw it anyway.",
+            sound: "Press play on The Hairemyverse and let it be loud in the room with you.",
+            world: "The Paradox Isles: every power in Vornhaven converges and the sky tears open. Madness, but make it geography.",
+            question: "If your mind was a room, what would you finally throw out the window?"
+          },
+          rebirth: {
+            title: "Rebirth",
+            img: "assets/img/beaver-kiwi.jpg",
+            alt: "beaver kiwi, Māori-Canadian fusion creature, pointillism",
+            piece: "beaver kiwi",
+            pieceNote: "Kiwi bird, beaver tail. M&amacr;ori blood, Canadian ground, a creature that shouldn&rsquo;t exist, thriving anyway.",
+            sound: "Goats&rsquo;N&rsquo;Sheep again, because Craigles O&rsquo;Grady had to step aside so Ron Hairemy could become fully realized.",
+            world: "Vornhaven itself was born when two planets, Synxxor and Deviorre, collided. Nothing reborn comes from nothing breaking first.",
+            question: "What version of you had to die so this one could breathe?"
+          }
+        };
+        var result = document.getElementById("zone-result");
+        var buttons = document.querySelectorAll(".zone-btn");
+        function showZone(key) {
+          var z = zones[key];
+          if (!z || !result) return;
+          buttons.forEach(function (b) {
+            b.classList.toggle("is-active", b.getAttribute("data-zone") === key);
+            b.setAttribute("aria-pressed", b.getAttribute("data-zone") === key ? "true" : "false");
+          });
+          result.innerHTML =
+            '<div class="zone-card">' +
+            '<img src="../' + z.img + '" alt="' + z.alt + '" loading="lazy">' +
+            '<div class="zone-card-text">' +
+            '<h3>' + z.title + '</h3>' +
+            '<p><strong>' + z.piece + '</strong>, ' + z.pieceNote + '</p>' +
+            '<p>' + z.sound + '</p>' +
+            '<p>' + z.world + '</p>' +
+            '<p class="zone-question">' + z.question + '</p>' +
+            '<p class="zone-actions"><a href="../art/pointillism.html">See the piece in the gallery &rarr;</a> &middot; <a href="index.html">Hear the music &rarr;</a> &middot; <a href="../vornhaven/index.html">Enter Vornhaven &rarr;</a></p>' +
+            '</div></div>';
+        }
+        buttons.forEach(function (btn) {
+          btn.addEventListener("click", function () { showZone(btn.getAttribute("data-zone")); });
+        });
+      })();
+      </script>
+    </section>
   <div class="lang-toggle bottom"><a class="lang-btn" href="index-mi.html">🌐 View page in Te Reo Māori</a></div>
   </main>
 

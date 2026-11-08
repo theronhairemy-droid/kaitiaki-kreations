@@ -93,6 +93,102 @@
         </a>
       </div>
     </section>
+
+    <section class="mind" aria-labelledby="mind-title">
+      <h2 id="mind-title">He aha te mea e taumaha ana i tēnei rā?</h2>
+      <p class="section-note">Kua hangaia te Hairemyverse ki ngā rohe. Kōwhiria te rohe e noho nei koe, ka tūtaki au ki a koe ki reira me tētahi toi, tētahi tangi, me tētahi pātai hei whakaaroaro.</p>
+      <div class="zone-picker" role="group" aria-label="Kōwhiria tō rohe">
+        <button type="button" class="zone-btn" data-zone="rage">Te Riri</button>
+        <button type="button" class="zone-btn" data-zone="love">Te Aroha</button>
+        <button type="button" class="zone-btn" data-zone="betrayal">Te Tinihanga</button>
+        <button type="button" class="zone-btn" data-zone="madness">Te Pōrangi</button>
+        <button type="button" class="zone-btn" data-zone="rebirth">Te Whānautanga Anō</button>
+      </div>
+      <div id="zone-result" class="zone-result" aria-live="polite">
+        <p class="zone-hint">Pāwhiria tētahi rohe i runga. Kāore he whakautu hē, ko tō tūnga o tēnei rā noa iho.</p>
+      </div>
+      <p class="zone-dotnote">I a koe e whakaaro ana: ko ia toi ira o konei he mano tini ira kōtahi. Kāore he mea nui e tū ohorere ana. Ka tū ira kōtahi pono i ia wā.</p>
+      <script>
+      (function () {
+        var zones = {
+          rage: {
+            title: "Te Riri",
+            img: "assets/img/please-save-me-now.jpg",
+            alt: "PLEASE... SAVE ME NOW!, te ngākau mura me ngā parirau, toi ira",
+            piece: "PLEASE&hellip; SAVE ME NOW!",
+            pieceNote: "Te ngākau mura me ōna parirau. &ldquo;Ko tēnei TRAUMA katoa i roto, ā, kei tōku ūpoko e noho ana.&rdquo;",
+            sound: "Tīmata ki a Goats&rsquo;N&rsquo;Sheep, te whakakake kua huri hei whakaputanga tuatahi.",
+            world: "I Vornhaven, i riro i te Pyrosire te torona i runga i te ahi, ā, i whakahau ia kia mau ia kara i te V.",
+            question: "He aha tāu e tahu ki te kore koe e wehi i ngā pungarehu?"
+          },
+          love: {
+            title: "Te Aroha",
+            img: "assets/img/manaia.jpg",
+            alt: "MANAIA, toi ira, i tāpaetia ki a Sammy Bright",
+            piece: "MANAIA",
+            pieceNote: "I tāpaetia ki a Sammy Bright, te Punga. Te parenga, i tāia ira kōtahi i ia wā.",
+            sound: "Noho me te whakaaro o &ldquo;Momentarily&rdquo;: te aroha ki a koe anō kia makuru rawa, kia ringihia ki ngā kapu pātea, kaua e tahu i a koe anō kia mahana ai tētahi atu.",
+            world: "Ka huna e ngā Vitaweaver tō rātou kongakonga ki roto i ngā hīmene, e kore e akina, ka whakaohoohotia ki waho.",
+            question: "Ko wai te tangata e ringi ana ki tō kapu, me te kore e whakawātea i tāna?"
+          },
+          betrayal: {
+            title: "Te Tinihanga",
+            img: "assets/img/anxietree-v2.jpg",
+            alt: "anxieTREE v2, toi ira i hangaia i roto i ngā hokinga, te hē, me te whakamā",
+            piece: "anxieTREE v2",
+            pieceNote: "I hangaia i roto i ngā hokinga ki te mahi hē, te hē, me te whakamā. E kore te rākau e huna i ngā wā taratara.",
+            sound: "They Tried To Take My Legacy, he hopunga mō te oranga tonutanga, mō te hunga e tino nui ana.",
+            world: "Ko te kongakonga Serpimancer, ko Xes&rsquo;z&#643;orath, e kore e riro mārire. Ka rawekehia ki waho, ka mahi ngū te paihana.",
+            question: "He aha te mea i akohia e te tinihanga ki a koe mō te hunga e whakaaetia ana e koe kia tata ki te mata?"
+          },
+          madness: {
+            title: "Te Pōrangi",
+            img: "assets/img/im-so-sick.jpg",
+            alt: "I&rsquo;m So Sick, he kanohi toi ira",
+            piece: "I&rsquo;m So Sick",
+            pieceNote: "Te kanohi i roto i te haruru. I ētahi rā he haruru noa te tohu, ā, ka tāia tonutia e koe.",
+            sound: "Pēhia te purei i te Hairemyverse, ā, tukua kia haruru i te rūma me koe.",
+            world: "Ngā Motu Paradox: ka tūtaki ngā mana katoa o Vornhaven, ā, ka haea te rangi. Te pōrangi, engari he matawhenua.",
+            question: "Mehemea he rūma tō hinengaro, he aha tāu e maka ai ki waho i te matapihi i te mutunga?"
+          },
+          rebirth: {
+            title: "Te Whānautanga Anō",
+            img: "assets/img/beaver-kiwi.jpg",
+            alt: "beaver kiwi, he mea ora whakakotahi Māori-Kānata, toi ira",
+            piece: "beaver kiwi",
+            pieceNote: "He manu kiwi, he hiku pīwa. He toto Māori, he whenua o Kānata, he mea ora e kore e tika kia ora, engari e ora tonu ana.",
+            sound: "Ko Goats&rsquo;N&rsquo;Sheep anō, nā te mea me mawehe a Craigles O&rsquo;Grady kia tino puāwai ai a Ron Hairemy.",
+            world: "I whānau mai a Vornhaven i te tukinga o ngā aorangi e rua, a Synxxor rāua ko Deviorre. Kāore he whānautanga anō e puta mai i te kore pakaru i te tuatahi.",
+            question: "Ko tēhea putanga o koe me mate kia ora ai tēnei?"
+          }
+        };
+        var result = document.getElementById("zone-result");
+        var buttons = document.querySelectorAll(".zone-btn");
+        function showZone(key) {
+          var z = zones[key];
+          if (!z || !result) return;
+          buttons.forEach(function (b) {
+            b.classList.toggle("is-active", b.getAttribute("data-zone") === key);
+            b.setAttribute("aria-pressed", b.getAttribute("data-zone") === key ? "true" : "false");
+          });
+          result.innerHTML =
+            '<div class="zone-card">' +
+            '<img src="../' + z.img + '" alt="' + z.alt + '" loading="lazy">' +
+            '<div class="zone-card-text">' +
+            '<h3>' + z.title + '</h3>' +
+            '<p><strong>' + z.piece + '</strong>, ' + z.pieceNote + '</p>' +
+            '<p>' + z.sound + '</p>' +
+            '<p>' + z.world + '</p>' +
+            '<p class="zone-question">' + z.question + '</p>' +
+            '<p class="zone-actions"><a href="../art/pointillism-mi.html">Tirohia te toi i te taiwhanga &rarr;</a> &middot; <a href="index-mi.html">Whakarongohia te puoro &rarr;</a> &middot; <a href="../vornhaven/index-mi.html">Tomo ki Vornhaven &rarr;</a></p>' +
+            '</div></div>';
+        }
+        buttons.forEach(function (btn) {
+          btn.addEventListener("click", function () { showZone(btn.getAttribute("data-zone")); });
+        });
+      })();
+      </script>
+    </section>
 <div class="lang-toggle bottom"><a class="lang-btn" href="index.html">🌐 View page in English</a></div>
   </main>
 
