@@ -58,80 +58,105 @@
       <h2 id="drops-title">Ngā whakaputanga hou</h2>
       <p class="section-note">He whakaputanga hou ia Mane, ia Wenerei, ia Paraire: e rima ngā mea e kore e kōrerohia e te nuinga o ngā tohunga whakapaipai whenua, te huarere o Edmonton me te Tauine o te Tarau, me tētahi kōrero e tika ana mō tō kawhe.</p>
       <p class="section-note">🌐 Kua neke te rangitaki a Asgard&rsquo;s Gardens, kimihia te pūranga katoa i konei: <a href="https://asgardsgardenslandscaping.github.io/asgardsgardenslandscaping/blog.html">asgardsgardenslandscaping.github.io/asgardsgardenslandscaping</a></p>
+      <div class="filter-chips" role="group" aria-label="Filter by topic">
+        <button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">Katoa</button>
+        <button type="button" class="filter-chip" data-filter="weather" aria-pressed="false">Te Huarere me te Ao</button>
+        <button type="button" class="filter-chip" data-filter="landscaping" aria-pressed="false">Te Whakapaipai Whenua</button>
+        <button type="button" class="filter-chip" data-filter="studio" aria-pressed="false">Ngā Kōrero Taiwhanga Toi</button>
+      </div>
+      <script>
+      (function () {
+        var chips = document.querySelectorAll(".filter-chip");
+        var cards = document.querySelectorAll("[data-cats]");
+        chips.forEach(function (chip) {
+          chip.addEventListener("click", function () {
+            var f = chip.getAttribute("data-filter");
+            chips.forEach(function (c) {
+              c.classList.toggle("is-active", c === chip);
+              c.setAttribute("aria-pressed", c === chip ? "true" : "false");
+            });
+            cards.forEach(function (card) {
+              var cats = (card.getAttribute("data-cats") || "").split(" ");
+              card.style.display = (f === "all" || cats.indexOf(f) !== -1) ? "" : "none";
+            });
+          });
+        });
+      })();
+      </script>
       <div class="cards">
-        <a class="card" href="KH-blog-13.html">
+        <a class="card" data-cats="weather landscaping" href="KH-blog-13.html">
           <p class="card-kicker">Blog #13 - The Day That Refused to Be Unlucky, Friday, November 6, 2026</p>
           <h3>The Day That Refused to Be Unlucky: Port Dover and the Friday the 13th Ride</h3>
           <p>Hey crew, Kaitiaki Hamon here. It is Friday, and no, it is not Friday the 13th, and it is definitely not Friday the 14th, but Blog #13 just landed on a Friday and the superstitious corner of my brain is paying full attention. Today the lawn myths get cross-examined, a little Ontario town throws a party on the calendar's scariest square...</p>
           <span class="card-link">Read the drop (English) &rarr;</span>
         </a>
-        <a class="card" href="KH-blog-12.html">
+        <a class="card" data-cats="weather" href="KH-blog-12.html">
           <p class="card-kicker">Blog #12 — The Prince of the Brigade, Wednesday, November 4, 2026</p>
           <h3>The Prince of the Brigade: Tommy Prince and the Fight He Kept Fighting</h3>
           <p>Hey crew, Kaitiaki Hamon here 🌳🚜. I am still living the two-address life this week, one foot at the old place and one at the new, with boxes doing more travelling than I am and the final loads still running the show, the poppy is up for remembrance season, and Edmonton has rolled out a warm, sunny November stretch that…</p>
           <span class="card-link">Read the drop (English) &rarr;</span>
         </a>
-        <a class="card" href="KH-blog-11.html">
+        <a class="card" data-cats="weather" href="KH-blog-11.html">
           <p class="card-kicker">Blog #11 — The Seventh Man, Monday, November 2, 2026</p>
           <h3>The Seventh Man: Joey Moss and the Work That Held a City Together</h3>
           <p>Hey crew, Kaitiaki Hamon here 🌳🚜. I am writing this one from in between homes, still at the old place waiting on people and trucks while the new lease has already started ticking, with a big morning call ahead of me and a week of Edmonton sunshine I did not expect in November, so today we talk about the kind of work nobody puts on a poster and…</p>
           <span class="card-link">Read the drop (English) &rarr;</span>
         </a>
-        <a class="card" href="KH-blog-10-mi.html">
+        <a class="card" data-cats="weather" href="KH-blog-10-mi.html">
           <p class="card-kicker">Rangitaki #10: Te Tohunga Puta Whakamutunga, Paraire, Oketopa 30, 2026</p>
           <h3>Te Puta Whakamutunga: Harry Houdini me te Halloween Kāore Ia i Waiho</h3>
           <p>Kia ora e te rōpū, ko Kaitiaki Hamon tēnei 🌳🚜. Ko te Pō i mua i Halloween, kei te haere tonu te wiki nekehanga kawenga atu, kawenga atu, ā, āpōpō pō ka tohu i te kotahi rau tau mai i te putanga o te tohunga puta nui rawa kua ora i āna mekameka whakamutunga, nā reira i tēnei pō ka eke tātou me ngā ngākau kī, ngā ara mārama, ā, he rama whakamahau kua whakamātauria, kua rite mō…</p>
           <span class="card-link">Pānuitia te whakaputanga &rarr;</span>
         </a>
-        <a class="card" href="KH-blog-9-mi.html">
+        <a class="card" data-cats="weather landscaping" href="KH-blog-9-mi.html">
           <p class="card-kicker">Rangitaki #9: Te Kuīni o Halloween e Whakatō Ana i a New York kia Ora Anō, Wenerei, Oketopa 28, 2026</p>
           <h3>Bette Midler me Hulaween: Te Kuīni o Halloween nāna ngā Māra o New York i Whakahoki</h3>
           <p>Kia ora e te rōpū, ko Kaitiaki Hamon tēnei 🌳🚜. Kei te heke te hukarere tuatahi o te tau ki Edmonton i tēnei ata, ka tau a Halloween hei te Rāhoroi, ā, kei te huri āta te wāhi hou mai i te pāka pouaka ki te kāinga ❄️🎃. Ka tino anga ngā kōwhiringa o tēnei rā ki te wā whakamataku, ā, kei te mahi kaha te kawhe pērā i te…</p>
           <span class="card-link">Pānuitia te whakaputanga &rarr;</span>
         </a>
-        <a class="card" href="KH-blog-8-mi.html">
+        <a class="card" data-cats="weather" href="KH-blog-8-mi.html">
           <p class="card-kicker">Rangitaki #8: Te Whakamōrearea o Esther Cox, Mane, Oketopa 26, 2026</p>
           <h3>Te Whakamōrearea o Esther Cox: Te Mea Ngaro Nui o Amherst o Canada</h3>
           <p>Kia ora e te whānau, ko Kaitiaki Hamon tēnei 🌳🚜. Ko te rā nekehanga tēnei i Edmonton, ko te wiki Halloween hoki, kei a Kyle te taraka, kei a Matt tētahi taraka anō, ka tuwhera ngā kūaha o te whare hou i tēnei ahiahi, ā, kāore he āputa whare nā te mea e rere ana te rīhi o Hudson ki Noema 30, nō reira ko tēnei rā he hiki, ehara i te whakamōrearea…</p>
           <span class="card-link">Pānuitia te whakaputanga &rarr;</span>
         </a>
-        <a class="card" href="KH-blog-7-mi.html">
+        <a class="card" data-cats="weather" href="KH-blog-7-mi.html">
           <p class="card-kicker">Rangitaki #7: Te Kaomaoma i Oma ki te Kāinga, Paraire, Oketopa 23, 2026</p>
           <h3>Te Kaomaoma i Oma ki te Kāinga: Tom Longboat</h3>
           <p>Kia ora e te whānau, ko Kaitiaki Hamon tēnei 🌳🚜, ko te Paraire tēnei, e patu tītaha ana te ua i Edmonton, ā, kei roto taku oranga katoa i ngā pouaka e tāpae ana i tētahi rūma e tatari ana ki ngā kī. Āpōpō ka whawhai au, ā te Rātapu ka neke mātou mēnā ka tae mai ngā kī, ā, i waenganui i ēnā ko te mahi toi ira TANIWHA e…</p>
           <span class="card-link">Pānuitia te whakaputanga &rarr;</span>
         </a>
-        <a class="card" href="KH-blog-6-mi.html">
+        <a class="card" data-cats="weather" href="KH-blog-6-mi.html">
           <p class="card-kicker">Rangitaki #6: Te Kōtiro i Tono ai ia he Kura, Wenerei, Oketopa 21, 2026</p>
           <h3>Te Kōtiro i Tono ai ia he Kura: Shannen Koostachin</h3>
           <p>Kia ora e te rōpū, ko Kaitiaki Hamon tēnei 🌳🚜, ko te Wenerei tēnei, kua puta te rā, kei te teka te haupapa mō tōna kaha, ā, kei te tuku a Edmonton i tētahi koha 14 tīkiri i waenganui o Oketopa. I konei ko te wiki rēhita mō ngā pepa whakarerekē ingoa, kei te whakatā te kānawehi TANIWHA i a MANAIA i muri i ngā hāora 61 neke atu o ngā ira, ā, kei te whakawātea kē te ua o te Paraire i tōna korokoro i te pae tawhiti…</p>
           <span class="card-link">Pānuitia te whakaputanga &rarr;</span>
         </a>
-        <a class="card" href="KH-blog-5-mi.html">
+        <a class="card" data-cats="weather" href="KH-blog-5-mi.html">
           <p class="card-kicker">Rangitaki #5.1: Te Tamaiti o Edmonton i Neke ai i te Wā, Tūrei, Oketopa 20, 2026</p>
           <h3>Te Tamaiti o Edmonton i Neke ai i te Wā: Michael J. Fox</h3>
           <p>Kia ora e te rōpū, ko Kaitiaki Hamon tēnei 🌳🚜: ko te Tūrei tēnei, ā, ko tēnei rā te matapihi mahi koura o te wiki: te rā, 13 tīkiri, me tētahi rārangi mahi e rongo katoa ana i te āwhā o te Paraire e whakatata mai ana…</p>
           <span class="card-link">Pānuitia te whakaputanga &rarr;</span>
         </a>
-        <a class="card" href="KH-blog-4-mi.html">
+        <a class="card" data-cats="weather studio" href="KH-blog-4-mi.html">
           <p class="card-kicker">Rangitaki #4: He Tangata Ngā Wāhine, Paraire, Oketopa 16, 2026</p>
           <h3>He Tangata Ngā Wāhine: The Famous Five</h3>
           <p>Kia ora e te kāhui, ko Kaitiaki Hamon tēnei 🌳🚜: ko Paraire tēnei, ko te rā tuku, ā, kei te tuku a Edmonton i tētahi koha 18 tīkiri ki a mātou i waenganui o Oketopa i te wā e ora ana te whārangi Hamon Art, ā, kei te tāpuke tonu ngā ira MANAIA, hāora i muri i te hāora…</p>
           <span class="card-link">Pānuitia te whakaputanga &rarr;</span>
         </a>
-        <a class="card" href="KH-blog-3-mi.html">
+        <a class="card" data-cats="weather studio" href="KH-blog-3-mi.html">
           <p class="card-kicker">Rangitaki #3*: Mahia Tētahi Mea, Wenerei, Oketopa 14, 2026</p>
           <h3>Mahia Tētahi Mea: Te Koha Whakamutunga a Gord Downie</h3>
           <p>Kia ora e te kāhui, ko Kaitiaki Hamon tēnei 🌳🚜: ko Wenerei tēnei, ko te rā tuku o Rangitaki #3*, ā, i oho a Edmonton i raro i te whakatūpato hau me te mea nei e ngana ana te rangi tonu ki te tiki i taku aro 💨. I whakawhiti te mahi toi ira MANAIA i te 60 hāora i tēnei wiki, ā, kei te whakaako tonu ngā ira i ahau ki te manawanui, kotahi i te wā…</p>
           <span class="card-link">Pānuitia te whakaputanga &rarr;</span>
         </a>
-        <a class="card" href="KH-blog-2-mi.html">
+        <a class="card" data-cats="weather studio" href="KH-blog-2-mi.html">
           <p class="card-kicker">Rangitaki #2: Te Rōpū Puoro i Peti ki a Ia Anō, Paraire, Oketopa 9, 2026</p>
           <h3>Te Rōpū Puoro i Peti ki a Ia Anō</h3>
           <p>Kia ora e te whānau mahi whenua, ko Kaitiaki Hamon tēnei 🌳🚜: i tēnei rā ka kawea mai e ahau te rangitaki #2 o te whakahoutanga o taku rangitaki, ā, ka tukuna atu tēnei ki a koe i mua i te pūnaha āwhā e karapoti ana i te mutunga wiki 🗓️❄️. Kua neke atu te kānewehi MANAIA i te 35 hāora ināianei, kua oti katoa ngā rārangi whakahuahua me ngā mahi rārangi katoa, ā, i tēnei rā, ka tīmata ahau ki te whakaora mai i a ia me te…</p>
           <span class="card-link">Pānuitia te whakaputanga &rarr;</span>
         </a>
-        <a class="card" href="KH-blog-1-mi.html">
+        <a class="card" data-cats="weather" href="KH-blog-1-mi.html">
           <p class="card-kicker">Rangitaki #1: Te Rā Tuatahi o te Wā Hou, Wenerei, Oketopa 7, 2026</p>
           <h3>Te Tūru i Kore ai Ia e Pai ki te Mahue</h3>
           <p>Kia ora e hoa mā, ko Kaitiaki Hamon tēnei 🌳🚜: Kua hōhonu taku ruku ki te putanga kānewehi 18x24in o taku mahi MANAIA, ā, kua tīmata kē ngā rārangi whakahuahua ki te āhua tūturu 🎨🔥. I tēnei rā ka haere ahau ki te whakaoti i te whakatakoto whāriki pātītī i te haurua tuarua o tētahi kāinga kua oti kē i ahau te hanga te taiapa me te mahi i te whakataumata whakamutunga o te whenua: e rua ngā wā 😤💪. Ko te rā…</p>
