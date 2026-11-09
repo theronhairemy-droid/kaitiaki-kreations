@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Karla:ital,wght@0,400;0,500;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261109manaia1">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261109yt1">
   <link rel="canonical" href="https://kaitiakihamon.com/index-mi.html">
   <meta property="og:url" content="https://kaitiakihamon.com/index-mi.html">
   <meta name="twitter:card" content="summary_large_image">
@@ -267,7 +267,9 @@
       <div class="video-lightbox-backdrop" data-close></div>
       <figure class="video-lightbox-box">
         <button type="button" class="video-lightbox-close" data-close aria-label="Close video">✕</button>
-        <video controls playsinline preload="none" src="assets/manaia-110h.mp4" title="MANAIA, 110 hours and counting: progress video"></video>
+        <div class="video-embed video-embed-vertical">
+          <iframe id="manaia-yt" src="about:blank" data-src="https://www.youtube.com/embed/u3Sz6znU91A" title="MANAIA, 110 hours and counting: progress video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
         <figcaption>MANAIA, 110 hours and counting. Follow to see when it&rsquo;s finished.</figcaption>
       </figure>
     </div>
@@ -275,9 +277,9 @@
     (function () {
       var box = document.getElementById("manaia-video");
       if (!box) return;
-      var vid = box.querySelector("video");
-      function open() { box.hidden = false; document.body.style.overflow = "hidden"; if (vid) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } }
-      function close() { box.hidden = true; document.body.style.overflow = ""; if (vid) vid.pause(); }
+      var frame = document.getElementById("manaia-yt");
+      function open() { box.hidden = false; document.body.style.overflow = "hidden"; if (frame && frame.getAttribute("src") === "about:blank") frame.setAttribute("src", frame.getAttribute("data-src") + "?autoplay=1&rel=0"); }
+      function close() { box.hidden = true; document.body.style.overflow = ""; if (frame) frame.setAttribute("src", "about:blank"); }
       document.querySelectorAll(".manaia-video-open").forEach(function (b) { b.addEventListener("click", open); });
       box.querySelectorAll("[data-close]").forEach(function (b) { b.addEventListener("click", close); });
       document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !box.hidden) close(); });
