@@ -1257,3 +1257,41 @@ html::before {
   to { background-position: 40px 230px, -30px 270px, 15px 310px; }
 }
 @media (prefers-reduced-motion: reduce) { html::before { animation: none; opacity: .35; } }
+
+/* ---------- Christmas Night v2: site-wide markers (xmas-sitewide-v2) ---------- */
+/* Kaitiaki's call, Nov 11, 2026: the first pass only read as Christmas on the
+   homepage; every other page was just snow. These markers ride in style.css
+   alone, so they land on EVERY page without an HTML rebuild push.
+   The poppy is OFF while the Christmas theme is live (his call, same night):
+   page() stops emitting the div, and this block hides the div already baked
+   into built pages. JANUARY PEEL-OFF WARNING: stale subpage HTML still
+   carries the poppy div, hidden only by this block, so the peel-off MUST
+   rebuild and push all pages or the poppy comes back on stale pages. */
+.page-poppy { display: none !important; }
+/* Meri Kirihimete ribbon: every page, under the nav, bauble dots along the top */
+.site-header::after {
+  content: "✿  Meri Kirihimete · Merry Christmas  ✿";
+  display: block;
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffd95e;
+  background-color: #7a1f16;
+  background-image:
+    radial-gradient(3px 3px at 12px 7px, #e6392b 98%, transparent 100%),
+    radial-gradient(3px 3px at 36px 7px, #f2b705 98%, transparent 100%),
+    radial-gradient(3px 3px at 60px 7px, #2fae5f 98%, transparent 100%),
+    radial-gradient(3px 3px at 84px 7px, #ffd95e 98%, transparent 100%);
+  background-size: 96px 16px;
+  background-repeat: repeat-x;
+  border-top: 2px solid #e6392b;
+  border-bottom: 2px solid #e6392b;
+  padding: 0.6rem 1rem 0.5rem;
+}
+/* Dot-stippled pōhutukawa Christmas tree, homepage hero */
+.xmas-tree { margin: 1.4rem auto 0.2rem; max-width: 230px; }
+.xmas-tree svg { display: block; width: 100%; height: auto; filter: drop-shadow(0 6px 14px rgba(0,0,0,.45)); }
+@media (max-width: 600px) { .xmas-tree { max-width: 180px; } }
